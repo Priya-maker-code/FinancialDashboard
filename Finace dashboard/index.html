@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finance Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>💰 Finance Dashboard</h1>
+</header>
+
+<div class="container">
+
+  <!-- Top Controls -->
+  <div class="top-bar">
+    <div>
+      <select id="role">
+        <option value="viewer">Viewer</option>
+        <option value="admin">Admin</option>
+      </select>
+      <button id="toggleTheme">🌙</button>
+    </div>
+    <button id="clearData">Clear Data</button>
+  </div>
+
+  <!-- Summary -->
+  <div class="cards">
+    <div class="card balance">
+      <h3>Balance</h3>
+      <p id="balance">₹0</p>
+    </div>
+    <div class="card income">
+      <h3>Income</h3>
+      <p id="income">₹0</p>
+    </div>
+    <div class="card expense">
+      <h3>Expenses</h3>
+      <p id="expense">₹0</p>
+    </div>
+  </div>
+
+  <!-- Chart -->
+  <div class="section">
+    <h2>Spending Breakdown</h2>
+    <div id="chart" class="chart"></div>
+  </div>
+
+  <!-- Transactions -->
+  <div class="section">
+    <h2>Transactions</h2>
+
+    <!-- Filters -->
+    <div class="filters">
+      <input type="text" id="search" placeholder="Search..." />
+      <select id="filterType">
+        <option value="all">All</option>
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+    </div>
+
+    <!-- Admin Form -->
+    <div id="form" class="form hidden">
+      <input type="number" id="amount" placeholder="Amount" />
+      <input type="text" id="category" placeholder="Category" />
+      <select id="type">
+        <option value="income">Income</option>
+        <option value="expense">Expense</option>
+      </select>
+      <button onclick="addTransaction()">Add</button>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Category</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="transactionList"></tbody>
+    </table>
+
+    <p id="empty" class="empty hidden">No transactions available</p>
+  </div>
+
+  <!-- Insights -->
+  <div class="section">
+    <h2>Insights</h2>
+    <p id="insight">No data yet</p>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

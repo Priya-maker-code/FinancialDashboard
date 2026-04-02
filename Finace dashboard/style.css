@@ -1,0 +1,140 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: #f1f5f9;
+  transition: 0.3s;
+}
+
+header {
+  background: linear-gradient(90deg, #2563eb, #1e40af);
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: #1e40af;
+}
+
+.cards {
+  display: grid;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.balance { border-left: 5px solid #2563eb; }
+.income { border-left: 5px solid green; }
+.expense { border-left: 5px solid red; }
+
+.section {
+  background: white;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.filters, .form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chart {
+  display: flex;
+  gap: 10px;
+  height: 120px;
+  align-items: flex-end;
+}
+
+.bar {
+  background: #2563eb;
+  flex: 1;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  border-radius: 5px 5px 0 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.empty {
+  text-align: center;
+  color: gray;
+}
+
+table {
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* DARK MODE */
+.dark {
+  background: #0f172a;
+  color: white;
+}
+
+.dark header {
+  background: #020617;
+}
+
+.dark .card,
+.dark .section {
+  background: #1e293b;
+}
+
+.dark table {
+  color: white;
+}
+
+.dark input,
+.dark select {
+  background: #334155;
+  color: white;
+  border: none;
+}
+
+.dark button {
+  background: #3b82f6;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
